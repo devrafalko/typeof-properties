@@ -1,6 +1,6 @@
 {
   "name": "typeof-properties",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validate the types of object properties.",
   "main": "index.js",
   "keywords": [

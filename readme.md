@@ -1,6 +1,6 @@
 # Description
 `typeof-properties` is a module that validates value type of the properties of objects.
-* Any bugs found? Give me to know on dev.rafalko@gmail.com or on [GitHub]()
+* Any bugs found? Give me to know on dev.rafalko@gmail.com or on [GitHub](https://github.com/devrafalko/typeof-properties)
 * Also check out [**`of-type`**](https://www.npmjs.com/package/of-type) package that checks whether the given value is of particular type *(`typeof-properties` is based on `of-type` package)*.
 * Also check out [**`typeof-arguments`**](https://www.npmjs.com/package/typeof-arguments) to validate value type of the arguments passed through functions.
 

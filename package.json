@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "description": "Validate the types of object properties.",
   "main": "index.js",
+  "scripts": {
+    "test": "node tests/jasmine.conf.js"
+  },
   "keywords": [
     "typeof",
     "object",
@@ -17,8 +20,8 @@
   "author": "Paweł Rafałko",
   "license": "MIT",
   "dependencies": {
-    "of-type": "^1.0.6",
-    "cli-color": "^1.2.0"
+    "cli-color": "^1.2.0",
+    "of-type": "^2.0.2"
   },
   "homepage": "https://github.com/devrafalko/typeof-properties#readme",
   "bugs": {
@@ -27,5 +30,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/devrafalko/typeof-properties.git"
+  },
+  "devDependencies": {
+    "jasmine": "^2.8.0",
+    "jasmine-spec-reporter": "^4.2.1"
   }
 }

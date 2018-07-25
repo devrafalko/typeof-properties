@@ -1,10 +1,10 @@
 const Jasmine = require('jasmine');
 const jasmine = new Jasmine();
 const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
-const deep = process.argv.slice(2)[0]==='deep';
+const deep = process.argv.slice(2)[0] === 'deep';
 jasmine.loadConfig({
-    spec_dir: 'tests/',
-    spec_files: ['tests*.js']
+  spec_dir: 'tests/',
+  spec_files: ['tests*.js']
 });
 
 jasmine.clearReporters();

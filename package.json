@@ -2,9 +2,10 @@
   "name": "typeof-properties",
   "version": "1.1.2",
   "description": "Validate the types of object properties.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "node tests/jasmine.conf.js"
+    "test": "node tests/jasmine.conf.js",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [
     "typeof",
@@ -15,13 +16,13 @@
     "properties",
     "value",
     "type",
-    "undefined"
+    "undefined",
+    "instanceof"
   ],
   "author": "Paweł Rafałko",
   "license": "MIT",
   "dependencies": {
-    "cli-color": "^1.2.0",
-    "of-type": "^2.0.2"
+    "of-type": "^2.2.0"
   },
   "homepage": "https://github.com/devrafalko/typeof-properties#readme",
   "bugs": {
@@ -32,7 +33,13 @@
     "url": "git+https://github.com/devrafalko/typeof-properties.git"
   },
   "devDependencies": {
-    "jasmine": "^2.8.0",
-    "jasmine-spec-reporter": "^4.2.1"
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "jasmine": "^3.1.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0"
   }
 }

@@ -1,4 +1,4 @@
-const ofType = require('of-type');
+import ofType from 'of-type';
 
 class TypeofProperties {
   constructor(getActualObject, getExpectedObject, callbackFunction) {
@@ -88,6 +88,6 @@ class TypeofProperties {
   }
 }
 
-module.exports = function typeofProperties() {
+export default function typeofProperties() {
   return new TypeofProperties(...arguments)();
-};
+}

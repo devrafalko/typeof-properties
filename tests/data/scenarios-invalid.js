@@ -12,7 +12,7 @@ class Diet {
   }
 }
 
-module.exports = [
+export default [
   {
     actual: { name: null },
     expected: { name: String },

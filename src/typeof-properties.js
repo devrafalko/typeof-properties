@@ -8,9 +8,11 @@ class TypeofProperties {
       if (!ofType(getActualObject[property], getExpectedObject[property])) {
         let actual = this.getActualType(getActualObject[property]);
         let types = this.getExpectedTypes(getExpectedObject[property]);
-        let message = `Invalid property ["${property}"]. The [${actual}] ${types.truthness}value has been assigned, while the ${types.message} is expected.`;
+        let textActual = `[${actual}] ${types.truthness}value`;
+        let textExpected = types.message;
+        let message = `Invalid property ["${property}"]. The ${textActual} has been assigned, while the ${types.message} is expected.`;
         if (ofType(callbackFunction, Function)) {
-          callbackFunction({ actual: actual, expected: types.expected, message: message, name: property });
+          callbackFunction({ actual, expected: types.expected, message, name: property, textActual, textExpected });
           valid = false;
           return false;
         } else {

@@ -22,7 +22,9 @@ describe('The module function', function () {
           actual: scenario[i].oActual,
           expected: scenario[i].oExpected,
           name: scenario[i].oName,
-          message: scenario[i].oMessage
+          message: scenario[i].oMessage,
+          textActual: scenario[i].oTextActual,
+          textExpected: scenario[i].oTextExpected
         }));
       });
     }

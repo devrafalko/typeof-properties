@@ -19,7 +19,9 @@ export default [
     oActual: 'null',
     oExpected: 'String',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type [String] is expected.'
+    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type [String] is expected.',
+    oTextActual: '[null] value',
+    oTextExpected: 'value of type [String]'
   },
   {
     actual: { name: 'Paul' },
@@ -27,7 +29,9 @@ export default [
     oActual: 'String',
     oExpected: 'null',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [String] value has been assigned, while the value of type [null] is expected.'
+    oMessage: 'Invalid property ["name"]. The [String] value has been assigned, while the value of type [null] is expected.',
+    oTextActual: '[String] value',
+    oTextExpected: 'value of type [null]'
   }
   ,
   {
@@ -36,7 +40,9 @@ export default [
     oActual: 'undefined',
     oExpected: 'String',
     oName: 'age',
-    oMessage: 'Invalid property ["age"]. The [undefined] value has been assigned, while the value of type [String] is expected.'
+    oMessage: 'Invalid property ["age"]. The [undefined] value has been assigned, while the value of type [String] is expected.',
+    oTextActual: '[undefined] value',
+    oTextExpected: 'value of type [String]'
   },
   {
     actual: { name: null },
@@ -44,7 +50,9 @@ export default [
     oActual: 'null',
     oExpected: 'string',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type matching string expression "string" is expected.'
+    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type matching string expression "string" is expected.',
+    oTextActual: '[null] value',
+    oTextExpected: 'value of type matching string expression "string"'
   },
   {
     actual: { name: null },
@@ -52,7 +60,9 @@ export default [
     oActual: 'null',
     oExpected: 'STRING',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type matching string expression "STRING" is expected.'
+    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type matching string expression "STRING" is expected.',
+    oTextActual: '[null] value',
+    oTextExpected: 'value of type matching string expression "STRING"'
   },
   {
     actual: { name: null },
@@ -60,7 +70,9 @@ export default [
     oActual: 'null',
     oExpected: 'number|string|undefined',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type matching string expression "number|string|undefined" is expected.'
+    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type matching string expression "number|string|undefined" is expected.',
+    oTextActual: '[null] value',
+    oTextExpected: 'value of type matching string expression "number|string|undefined"'
   },
   {
     actual: { name: null },
@@ -68,7 +80,9 @@ export default [
     oActual: 'null',
     oExpected: 'truthy|undefined',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [null] <<falsy>> value has been assigned, while the value of type matching string expression "truthy|undefined" is expected.'
+    oMessage: 'Invalid property ["name"]. The [null] <<falsy>> value has been assigned, while the value of type matching string expression "truthy|undefined" is expected.',
+    oTextActual: '[null] <<falsy>> value',
+    oTextExpected: 'value of type matching string expression "truthy|undefined"'
   },
   {
     actual: { name: 'Paul' },
@@ -76,7 +90,9 @@ export default [
     oActual: 'String',
     oExpected: 'falsy|number',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [String] <<truthy>> value has been assigned, while the value of type matching string expression "falsy|number" is expected.'
+    oMessage: 'Invalid property ["name"]. The [String] <<truthy>> value has been assigned, while the value of type matching string expression "falsy|number" is expected.',
+    oTextActual: '[String] <<truthy>> value',
+    oTextExpected: 'value of type matching string expression "falsy|number"'
   },
   {
     actual: { name: null },
@@ -84,7 +100,9 @@ export default [
     oActual: 'null',
     oExpected: '/string/i',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type matching regular expression /string/i is expected.'
+    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type matching regular expression /string/i is expected.',
+    oTextActual: '[null] value',
+    oTextExpected: 'value of type matching regular expression /string/i'
   },
   {
     actual: { name: null },
@@ -92,7 +110,9 @@ export default [
     oActual: 'null',
     oExpected: '/truthy/',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [null] <<falsy>> value has been assigned, while the value of type matching regular expression /truthy/ is expected.'
+    oMessage: 'Invalid property ["name"]. The [null] <<falsy>> value has been assigned, while the value of type matching regular expression /truthy/ is expected.',
+    oTextActual: '[null] <<falsy>> value',
+    oTextExpected: 'value of type matching regular expression /truthy/'
   },
   {
     actual: { name: null },
@@ -100,7 +120,9 @@ export default [
     oActual: 'null',
     oExpected: '/truthy|undefined|String/',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [null] <<falsy>> value has been assigned, while the value of type matching regular expression /truthy|undefined|String/ is expected.'
+    oMessage: 'Invalid property ["name"]. The [null] <<falsy>> value has been assigned, while the value of type matching regular expression /truthy|undefined|String/ is expected.',
+    oTextActual: '[null] <<falsy>> value',
+    oTextExpected: 'value of type matching regular expression /truthy|undefined|String/'
   },
   {
     actual: { name: 'Paul' },
@@ -108,7 +130,9 @@ export default [
     oActual: 'String',
     oExpected: '/falsy/',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [String] <<truthy>> value has been assigned, while the value of type matching regular expression /falsy/ is expected.'
+    oMessage: 'Invalid property ["name"]. The [String] <<truthy>> value has been assigned, while the value of type matching regular expression /falsy/ is expected.',
+    oTextActual: '[String] <<truthy>> value',
+    oTextExpected: 'value of type matching regular expression /falsy/'
   },
   {
     actual: { name: 'Paul' },
@@ -116,7 +140,9 @@ export default [
     oActual: 'String',
     oExpected: '/falsy|Array/',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [String] <<truthy>> value has been assigned, while the value of type matching regular expression /falsy|Array/ is expected.'
+    oMessage: 'Invalid property ["name"]. The [String] <<truthy>> value has been assigned, while the value of type matching regular expression /falsy|Array/ is expected.',
+    oTextActual: '[String] <<truthy>> value',
+    oTextExpected: 'value of type matching regular expression /falsy|Array/'
   },
   {
     actual: { name: null },
@@ -124,7 +150,9 @@ export default [
     oActual: 'null',
     oExpected: '/TrUtHy/',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type matching regular expression /TrUtHy/ is expected.'
+    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type matching regular expression /TrUtHy/ is expected.',
+    oTextActual: '[null] value',
+    oTextExpected: 'value of type matching regular expression /TrUtHy/'
   },
   {
     actual: { name: 'Paul' },
@@ -132,7 +160,9 @@ export default [
     oActual: 'String',
     oExpected: '/FaLsY/',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [String] value has been assigned, while the value of type matching regular expression /FaLsY/ is expected.'
+    oMessage: 'Invalid property ["name"]. The [String] value has been assigned, while the value of type matching regular expression /FaLsY/ is expected.',
+    oTextActual: '[String] value',
+    oTextExpected: 'value of type matching regular expression /FaLsY/'
   },
   {
     actual: { name: 'Paul' },
@@ -140,7 +170,9 @@ export default [
     oActual: 'String',
     oExpected: '/FaLsY/i',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [String] <<truthy>> value has been assigned, while the value of type matching regular expression /FaLsY/i is expected.'
+    oMessage: 'Invalid property ["name"]. The [String] <<truthy>> value has been assigned, while the value of type matching regular expression /FaLsY/i is expected.',
+    oTextActual: '[String] <<truthy>> value',
+    oTextExpected: 'value of type matching regular expression /FaLsY/i'
   },
   {
     actual: { name: null },
@@ -148,7 +180,9 @@ export default [
     oActual: 'null',
     oExpected: 'String|Array|undefined|Boolean',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type [String|Array|undefined|Boolean] is expected.'
+    oMessage: 'Invalid property ["name"]. The [null] value has been assigned, while the value of type [String|Array|undefined|Boolean] is expected.',
+    oTextActual: '[null] value',
+    oTextExpected: 'value of type [String|Array|undefined|Boolean]'
   },
   {
     actual: { date: new Date() },
@@ -156,7 +190,9 @@ export default [
     oActual: 'Date',
     oExpected: 'Array|undefined',
     oName: 'date',
-    oMessage: 'Invalid property ["date"]. The [Date] value has been assigned, while the value of type [Array|undefined] is expected.'
+    oMessage: 'Invalid property ["date"]. The [Date] value has been assigned, while the value of type [Array|undefined] is expected.',
+    oTextActual: '[Date] value',
+    oTextExpected: 'value of type [Array|undefined]'
   },
   {
     actual: { age: Infinity },
@@ -164,7 +200,9 @@ export default [
     oActual: 'Number',
     oExpected: 'Array|undefined',
     oName: 'age',
-    oMessage: 'Invalid property ["age"]. The [Number] value has been assigned, while the value of type [Array|undefined] is expected.'
+    oMessage: 'Invalid property ["age"]. The [Number] value has been assigned, while the value of type [Array|undefined] is expected.',
+    oTextActual: '[Number] value',
+    oTextExpected: 'value of type [Array|undefined]'
   },
   {
     actual: { name: 'Paul' },
@@ -172,7 +210,9 @@ export default [
     oActual: 'String',
     oExpected: 'null',
     oName: 'name',
-    oMessage: 'Invalid property ["name"]. The [String] value has been assigned, while the value of type [null] is expected.'
+    oMessage: 'Invalid property ["name"]. The [String] value has been assigned, while the value of type [null] is expected.',
+    oTextActual: '[String] value',
+    oTextExpected: 'value of type [null]'
   },
   {
     actual: { name: 'Paul', age: 22 },
@@ -180,7 +220,9 @@ export default [
     oActual: 'undefined',
     oExpected: '/string/i',
     oName: 'location',
-    oMessage: 'Invalid property ["location"]. The [undefined] value has been assigned, while the value of type matching regular expression /string/i is expected.'
+    oMessage: 'Invalid property ["location"]. The [undefined] value has been assigned, while the value of type matching regular expression /string/i is expected.',
+    oTextActual: '[undefined] value',
+    oTextExpected: 'value of type matching regular expression /string/i'
   },
   {
     actual: {
@@ -193,7 +235,9 @@ export default [
     oActual: 'Diet',
     oExpected: 'Object',
     oName: 'diet',
-    oMessage: 'Invalid property ["diet"]. The [Diet] value has been assigned, while the value of type [Object] is expected.'
+    oMessage: 'Invalid property ["diet"]. The [Diet] value has been assigned, while the value of type [Object] is expected.',
+    oTextActual: '[Diet] value',
+    oTextExpected: 'value of type [Object]'
   },
   {
     actual: {
@@ -207,7 +251,9 @@ export default [
     oActual: 'Person',
     oExpected: 'Diet',
     oName: 'person',
-    oMessage: 'Invalid property ["person"]. The [Person] value has been assigned, while the value of type [Diet] is expected.'
+    oMessage: 'Invalid property ["person"]. The [Person] value has been assigned, while the value of type [Diet] is expected.',
+    oTextActual: '[Person] value',
+    oTextExpected: 'value of type [Diet]'
   },
   {
     actual: {
@@ -221,7 +267,9 @@ export default [
     oActual: 'Diet',
     oExpected: 'Person|Object',
     oName: 'diet',
-    oMessage: 'Invalid property ["diet"]. The [Diet] value has been assigned, while the value of type [Person|Object] is expected.'
+    oMessage: 'Invalid property ["diet"]. The [Diet] value has been assigned, while the value of type [Person|Object] is expected.',
+    oTextActual: '[Diet] value',
+    oTextExpected: 'value of type [Person|Object]'
   },
   {
     actual: {
@@ -235,11 +283,8 @@ export default [
     oActual: 'Object',
     oExpected: 'instance',
     oName: 'diet',
-    oMessage: 'Invalid property ["diet"]. The [Object] value has been assigned, while the value of type matching string expression "instance" is expected.'
+    oMessage: 'Invalid property ["diet"]. The [Object] value has been assigned, while the value of type matching string expression "instance" is expected.',
+    oTextActual: '[Object] value',
+    oTextExpected: 'value of type matching string expression "instance"'
   }
 ];
-
-
-
-
-

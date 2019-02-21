@@ -186,6 +186,10 @@ that is valid before compilation, may fail after compilation, if the bundler min
     indicates the type(s) expected by the user, eg. `"Array"`, `"Boolean|Number"`, `"/array|object/i"`
   * **`message`**  
     is the default error [String] message, that you can use eg. to log in the console
+  * **`textActual`**  
+    indicates the [String] textual actual type, eg. `"[undefined] <<falsy>> value"`
+  * **`textExpected`**  
+    indicates the [String] textual expected type, eg. `"value of type matching regular expression /String|null/"`
 
 ```javascript
 const type = require('typeof-properties');

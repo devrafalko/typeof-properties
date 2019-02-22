@@ -4,49 +4,49 @@ export default [
     expected: { name: 10 },
     oActual: 'null',
     oExpected: '{name:10}',
-    message: /The first argument must be of type \[Object\]./
+    message: /The \[0\] argument must be of type \[Object\]./
   },
   {
     actual: undefined,
     expected: undefined,
     oActual: 'undefined',
     oExpected: 'undefined',
-    message: /The first argument must be of type \[Object\]./
+    message: /The \[0\] argument must be of type \[Object\]./
   },
   {
     actual: [1, 2, 3],
     expected: undefined,
     oActual: '[1,2,3]',
     oExpected: 'undefined',
-    message: /The first argument must be of type \[Object\]./
+    message: /The \[0\] argument must be of type \[Object\]./
   },
   {
     actual: { name: 'Paul' },
     expected: null,
     oActual: "{name:'Paul'}",
     oExpected: 'null',
-    message: /The second argument must be of type \[Object\]./
+    message: /The \[1\] argument must be of type \[Object\]./
   },
   {
     actual: { name: 'Paul' },
     expected: Number,
     oActual: "{name:'Paul'}",
     oExpected: 'Number',
-    message: /The second argument must be of type \[Object\]./
+    message: /The \[1\] argument must be of type \[Object\]./
   },
   {
     actual: JSON,
     expected: null,
     oActual: 'JSON',
     oExpected: 'null',
-    message: /The second argument must be of type \[Object\]./
+    message: /The \[1\] argument must be of type \[Object\]./
   },
   {
     actual: (function () { return arguments; })(),
     expected: [1, 2, 3],
     oActual: '(function(){return arguments;})()',
     oExpected: '[1,2,3]',
-    message: /The second argument must be of type \[Object\]./
+    message: /The \[1\] argument must be of type \[Object\]./
   },
   {
     actual: { name: 'Paul' },

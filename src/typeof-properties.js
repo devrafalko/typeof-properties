@@ -8,7 +8,7 @@ class TypeofProperties {
       if (!ofType(getActualObject[property], getExpectedObject[property])) {
         let actual = this.getActualType(getActualObject[property]);
         let types = this.getExpectedTypes(getExpectedObject[property]);
-        let textActual = `[${actual}] ${types.truthness}value`;
+        let textActual = `[${actual}] ${types.addons}value`;
         let textExpected = types.message;
         let message = `Invalid property ["${property}"]. The ${textActual} has been assigned, while the ${types.message} is expected.`;
         if (ofType(callbackFunction, Function)) {
@@ -24,8 +24,8 @@ class TypeofProperties {
   }
 
   validateArguments(actual, expected) {
-    if (!ofType(actual, 'object|instance')) throw new TypeError('typeof-properties: The first argument must be of type [Object].');
-    if (!ofType(expected, 'object|instance')) throw new TypeError('typeof-properties: The second argument must be of type [Object].');
+    if (!ofType(actual, 'object|instance')) throw new TypeError('typeof-properties: The [0] argument must be of type [Object].');
+    if (!ofType(expected, 'object|instance')) throw new TypeError('typeof-properties: The [1] argument must be of type [Object].');
   }
 
   getActualType(actualValue) {
@@ -47,33 +47,36 @@ class TypeofProperties {
   whenString(stringType) {
     if (!ofType(stringType, String)) return null;
     const msg = `value of type matching string expression "${stringType}"`;
-    let truthness = '';
+    let truthness = '', objectable = '';
     stringType.split('|').forEach((i) => {
       if (i.toLowerCase() === 'truthy') truthness = '<<falsy>> ';
       if (i.toLowerCase() === 'falsy') truthness = '<<truthy>> ';
+      if (i.toLowerCase() === 'objectable') objectable = '<<non-objectable>> ';
     });
-    return { message: msg, truthness: truthness, expected: stringType };
+    return { message: msg, addons: truthness + objectable, expected: stringType };
   }
 
   whenRegExp(regType) {
     if (!ofType(regType, RegExp)) return null;
     const msg = `value of type matching regular expression ${regType}`;
-    return { message: msg, truthness: truthness(regType), expected: regType.toString() };
+    return { message: msg, addons: addons(regType), expected: regType.toString() };
 
-    function truthness(regType) {
+    function addons(regType) {
       const isCaseInsensitive = regType.flags.match(/i/);
       let str = regType.toString();
       str = isCaseInsensitive ? str.toLowerCase() : str;
-      if (str.match(/truthy/)) return '<<falsy>> ';
-      if (str.match(/falsy/)) return '<<truthy>> ';
-      return '';
+      let truthness = '', objectable = '';
+      if (str.match(/truthy/)) truthness = '<<falsy>> ';
+      if (str.match(/falsy/)) truthness = '<<truthy>> ';
+      if (str.match(/objectable/)) objectable = '<<non-objectable>> ';
+      return truthness + objectable;
     }
   }
 
   whenObject(objectType) {
-    if (ofType(objectType, null)) return { message: 'value of type [null]', truthness: '', expected: 'null' };
-    if (ofType(objectType, undefined)) return { message: 'value of type [undefined]', truthness: '', expected: 'undefined' };
-    if (ofType(objectType, Function)) return { message: `value of type [${objectType.name}]`, truthness: '', expected: objectType.name };
+    if (ofType(objectType, null)) return { message: 'value of type [null]', addons: '', expected: 'null' };
+    if (ofType(objectType, undefined)) return { message: 'value of type [undefined]', addons: '', expected: 'undefined' };
+    if (ofType(objectType, Function)) return { message: `value of type [${objectType.name}]`, addons: '', expected: objectType.name };
     return null;
   }
 
@@ -86,7 +89,7 @@ class TypeofProperties {
       types[exp.expected] = exp.expected;
     }
     const expected = Object.getOwnPropertyNames(types).join('|');
-    return { message: `value of type [${expected}]`, truthness: '', expected: expected };
+    return { message: `value of type [${expected}]`, addons: '', expected: expected };
   }
 }
 

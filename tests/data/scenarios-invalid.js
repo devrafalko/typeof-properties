@@ -32,8 +32,7 @@ export default [
     oMessage: 'Invalid property ["name"]. The [String] value has been assigned, while the value of type [null] is expected.',
     oTextActual: '[String] value',
     oTextExpected: 'value of type [null]'
-  }
-  ,
+  },
   {
     actual: {},
     expected: { age: String },
@@ -257,6 +256,22 @@ export default [
   },
   {
     actual: {
+      diet: { calories: 1500, weight: 56 },
+      person: new Person('Jessica', 22)
+    },
+    expected: {
+      diet: /instance/,
+      person: /INSTANCE/i
+    },
+    oActual: 'Object',
+    oExpected: '/instance/',
+    oName: 'diet',
+    oMessage: 'Invalid property ["diet"]. The [Object] value has been assigned, while the value of type matching regular expression /instance/ is expected.',
+    oTextActual: '[Object] value',
+    oTextExpected: 'value of type matching regular expression /instance/'
+  },
+  {
+    actual: {
       diet: new Diet(1500, 56),
       person: new Person('Jessica', 22)
     },
@@ -286,5 +301,95 @@ export default [
     oMessage: 'Invalid property ["diet"]. The [Object] value has been assigned, while the value of type matching string expression "instance" is expected.',
     oTextActual: '[Object] value',
     oTextExpected: 'value of type matching string expression "instance"'
+  },
+  {
+    actual: { name: (function(){return arguments;})('Albert') },
+    expected: { name: String },
+    oActual: 'arguments',
+    oExpected: 'String',
+    oName: 'name',
+    oMessage: 'Invalid property ["name"]. The [arguments] value has been assigned, while the value of type [String] is expected.',
+    oTextActual: '[arguments] value',
+    oTextExpected: 'value of type [String]'
+  },
+  {
+    actual: { name: (function(name){return name;})('Albert') },
+    expected: { name: 'arguments|array' },
+    oActual: 'String',
+    oExpected: 'arguments|array',
+    oName: 'name',
+    oMessage: 'Invalid property ["name"]. The [String] value has been assigned, while the value of type matching string expression "arguments|array" is expected.',
+    oTextActual: '[String] value',
+    oTextExpected: 'value of type matching string expression "arguments|array"'
+  },
+  {
+    actual: { name: (function(name){return name;})('Albert') },
+    expected: { name: /Arguments|Array/i },
+    oActual: 'String',
+    oExpected: '/Arguments|Array/i',
+    oName: 'name',
+    oMessage: 'Invalid property ["name"]. The [String] value has been assigned, while the value of type matching regular expression /Arguments|Array/i is expected.',
+    oTextActual: '[String] value',
+    oTextExpected: 'value of type matching regular expression /Arguments|Array/i'
+  },
+  {
+    actual: {
+      person: 'Jessica'
+    },
+    expected: {
+      person: 'falsy|objectable'
+    },
+    oActual: 'String',
+    oExpected: 'falsy|objectable',
+    oName: 'person',
+    oMessage: 'Invalid property ["person"]. The [String] <<truthy>> <<non-objectable>> value has been assigned, while the value of type matching string expression "falsy|objectable" is expected.',
+    oTextActual: '[String] <<truthy>> <<non-objectable>> value',
+    oTextExpected: 'value of type matching string expression "falsy|objectable"'
+  },
+  {
+    actual: {
+      weight: 66,
+      calories: 1700
+    },
+    expected: {
+      weight: 'truthy|number',
+      calories: /Falsy|Objectable/i
+    },
+    oActual: 'Number',
+    oExpected: '/Falsy|Objectable/i',
+    oName: 'calories',
+    oMessage: 'Invalid property ["calories"]. The [Number] <<truthy>> <<non-objectable>> value has been assigned, while the value of type matching regular expression /Falsy|Objectable/i is expected.',
+    oTextActual: '[Number] <<truthy>> <<non-objectable>> value',
+    oTextExpected: 'value of type matching regular expression /Falsy|Objectable/i'
+  },
+  {
+    actual: {
+      person: null
+    },
+    expected: {
+      person: 'truthy|objectable'
+    },
+    oActual: 'null',
+    oExpected: 'truthy|objectable',
+    oName: 'person',
+    oMessage: 'Invalid property ["person"]. The [null] <<falsy>> <<non-objectable>> value has been assigned, while the value of type matching string expression "truthy|objectable" is expected.',
+    oTextActual: '[null] <<falsy>> <<non-objectable>> value',
+    oTextExpected: 'value of type matching string expression "truthy|objectable"'
+  },
+  {
+    actual: {
+      weight: new Number(66),
+      calories: false
+    },
+    expected: {
+      weight: 'null|objectable',
+      calories: /Truthy|Objectable/i
+    },
+    oActual: 'Boolean',
+    oExpected: '/Truthy|Objectable/i',
+    oName: 'calories',
+    oMessage: 'Invalid property ["calories"]. The [Boolean] <<falsy>> <<non-objectable>> value has been assigned, while the value of type matching regular expression /Truthy|Objectable/i is expected.',
+    oTextActual: '[Boolean] <<falsy>> <<non-objectable>> value',
+    oTextExpected: 'value of type matching regular expression /Truthy|Objectable/i'
   }
 ];

@@ -76,6 +76,26 @@ export default [
     }
   },
   {
+    actual: {
+      name: (function(){return arguments;})('Albert'),
+      surname: (function(){return arguments;})('Einstein')
+    },
+    expected: {
+      name: 'arguments',
+      surname: /arguments/
+    }
+  },
+  {
+    actual: {
+      name: (function(){return arguments;})('Albert'),
+      surname: (function(){return arguments;})('Einstein')
+    },
+    expected: {
+      name: 'arguments|ARRAY',
+      surname: /ARGUMENTS/i
+    }
+  },
+  {
     actual: new (class Data {
       constructor() {
         this.city = 'Warsaw';
@@ -94,6 +114,28 @@ export default [
       data: '',
       temperature: /any/,
       humidity: 'ANY'
+    }
+  },
+  {
+    actual: new (class Data {
+      constructor() {
+        this.city = new String('Warsaw');
+        this.latitude = 52.229676;
+        this.longitude = 21.012229;
+        this.date = new Date('2017-08-22');
+        this.temperature = { day: 24, night: 18 };
+        this.humidity = new Number(.71);
+        this.winter = { kph: 18, mph: 11.3 };
+      }
+    })(),
+    expected: {
+      city: /objectable/,
+      latitude: 'any',
+      longitude: [],
+      data: '',
+      temperature: /any/,
+      humidity: 'objectable|null',
+      winter: 'objectable'
     }
   },
   {
@@ -135,6 +177,16 @@ export default [
     expected: {
       diet: 'diet',
       person: 'PERSON'
+    }
+  },
+  {
+    actual: {
+      diet: new Diet(1500, 56),
+      person: new Person('Jessica', 22)
+    },
+    expected: {
+      diet: 'objectable',
+      person: /OBJECTABLE/i
     }
   },
   {
